@@ -4,7 +4,7 @@ import Course from './Course';
 import {hasConflict} from '../utils/course'
 
 
-const CourseSelector = ({courses}) => {
+const CourseSelector = ({courses, view}) => {
 
     const [selected, setSelected] = useState([])
 
@@ -22,7 +22,9 @@ const CourseSelector = ({courses}) => {
                         course={course}  
                         isDisabled={hasConflict(course, selected)}  
                         isSelected={selected.includes(course)}  
-                        select={toggle} />
+                        select={toggle} 
+                        view = {view}    
+                        />
                 ))
             }
         </View>

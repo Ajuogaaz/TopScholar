@@ -5,7 +5,7 @@ import TermSelector from './TermSelector'
 import CourseSelector from  './CourseSelector'
 import {  getCourseTerm,  terms }from '../utils/course'
 
-const CourseList = ({ courses }) => {
+const CourseList = ({ courses, view }) => {
 
     const [selectedTerm, setSelectedTerm ] = useState('Winter');
 
@@ -16,7 +16,7 @@ const CourseList = ({ courses }) => {
             
         <ScrollView>
             <TermSelector terms={terms} selectedTerm={selectedTerm} setSelectedTerm={setSelectedTerm} />
-            <CourseSelector courses={termCourses}/>
+            <CourseSelector courses={termCourses} view={view}/>
         </ScrollView>
   )};
 
